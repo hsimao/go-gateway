@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/e421083458/go_gateway_demo/router"
+	"github.com/hsimao/go_gateway_demo/router"
 	"github.com/e421083458/golang_common/lib"
 	"os"
 	"os/signal"
