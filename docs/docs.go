@@ -81,12 +81,12 @@ var doc = `{
             ],
             "properties": {
                 "password": {
-                    "description": "密碼 ==",
+                    "description": "密碼",
                     "type": "string",
                     "example": "123456"
                 },
                 "username": {
-                    "description": "姓名==",
+                    "description": "姓名",
                     "type": "string",
                     "example": "admin"
                 }

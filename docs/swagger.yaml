@@ -2,11 +2,11 @@ definitions:
   dto.AdminLoginInput:
     properties:
       password:
-        description: 密碼 ==
+        description: 密碼
         example: "123456"
         type: string
       username:
-        description: 姓名==
+        description: 姓名
         example: admin
         type: string
     required:
