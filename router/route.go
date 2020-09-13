@@ -1,11 +1,11 @@
 package router
 
 import (
-	"github.com/e421083458/golang_common/lib"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/hsimao/go_gateway_demo/controller"
 	"github.com/hsimao/go_gateway_demo/docs"
+	"github.com/hsimao/go_gateway_demo/golang_common/lib"
 	"github.com/hsimao/go_gateway_demo/middleware"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

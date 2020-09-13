@@ -3,7 +3,7 @@ package middleware
 import (
 	"bytes"
 	"github.com/hsimao/go_gateway_demo/public"
-	"github.com/e421083458/golang_common/lib"
+	"github.com/hsimao/go_gateway_demo/golang_common/lib"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"time"

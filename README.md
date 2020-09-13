@@ -157,7 +157,7 @@ curl 'http://127.0.0.1:8880/demo/bind?name=name&locale=en'
 
 ### log / redis / mysql / http.client 常用方法
 
-参考文档：https://github.com/hsimao/golang_common
+参考文档：https://github.com/hsimao/go_gateway_demo/golang_common
 
 ### swagger 文档生成
 
