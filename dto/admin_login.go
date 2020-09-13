@@ -9,7 +9,7 @@ import (
 
 type AdminSessionInfo struct {
 	ID        int       `json:"id"`
-	UserName  string    `json:"username"`
+	Name      string    `json:"name"`
 	LoginTime time.Time `json:"login_time"`
 }
 

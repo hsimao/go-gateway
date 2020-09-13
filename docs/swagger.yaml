@@ -1,4 +1,21 @@
 definitions:
+  dto.AdminInfoOutput:
+    properties:
+      avatar:
+        type: string
+      id:
+        type: integer
+      introduction:
+        type: string
+      login_time:
+        type: string
+      name:
+        type: string
+      roles:
+        items:
+          type: string
+        type: array
+    type: object
   dto.AdminLoginInput:
     properties:
       password:
@@ -35,6 +52,27 @@ definitions:
 info:
   contact: {}
 paths:
+  /admin/admin_info:
+    get:
+      consumes:
+      - application/json
+      description: 管理員資料
+      operationId: /admin/admin_info
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/dto.AdminInfoOutput'
+              type: object
+      summary: 管理員資料
+      tags:
+      - 管理員接口
   /admin_login/login:
     post:
       consumes:

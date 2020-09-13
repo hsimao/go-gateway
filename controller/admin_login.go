@@ -55,7 +55,7 @@ func (adminlogin *AdminLoginController) AdminLogin(c *gin.Context) {
 	// session setting
 	sessInfo := &dto.AdminSessionInfo{
 		ID:        admin.Id,
-		UserName:  admin.UserName,
+		Name:      admin.UserName,
 		LoginTime: time.Now(),
 	}
 
