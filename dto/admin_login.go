@@ -1,9 +1,17 @@
 package dto
 
 import (
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/hsimao/go_gateway_demo/public"
 )
+
+type AdminSessionInfo struct {
+	ID        int       `json:"id"`
+	UserName  string    `json:"username"`
+	LoginTime time.Time `json:"login_time"`
+}
 
 type AdminLoginInput struct {
 	UserName string `json:"username" form:"username" comment:"姓名" example:"admin" validate:"required,is_valid_username"` // 姓名

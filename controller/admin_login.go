@@ -1,11 +1,16 @@
 package controller
 
 import (
+	"encoding/json"
+	"time"
+
+	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/hsimao/go_gateway_demo/dao"
 	"github.com/hsimao/go_gateway_demo/dto"
 	"github.com/hsimao/go_gateway_demo/golang_common/lib"
 	"github.com/hsimao/go_gateway_demo/middleware"
+	"github.com/hsimao/go_gateway_demo/public"
 )
 
 type AdminLoginController struct{}
@@ -46,6 +51,22 @@ func (adminlogin *AdminLoginController) AdminLogin(c *gin.Context) {
 		middleware.ResponseError(c, 2002, err)
 		return
 	}
+
+	// session setting
+	sessInfo := &dto.AdminSessionInfo{
+		ID:        admin.Id,
+		UserName:  admin.UserName,
+		LoginTime: time.Now(),
+	}
+
+	sessBts, err := json.Marshal(sessInfo)
+	if err != nil {
+		middleware.ResponseError(c, 2003, err)
+		return
+	}
+	sess := sessions.Default(c)
+	sess.Set(public.AdminSessionInfoKey, string(sessBts))
+	sess.Save()
 
 	out := &dto.AdminLoginOupt{Token: admin.UserName}
 	middleware.ResponseSuccess(c, out)
